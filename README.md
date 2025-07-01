@@ -8,7 +8,7 @@ The filter is largely inspired by
 ## Installing
 
 ```bash
-quarto add quarto-ext/include-code-files
+quarto add JakeJing/include-code-files
 ```
 
 This will install the extension under the `_extensions` subdirectory.
