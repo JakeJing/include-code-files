@@ -25,6 +25,7 @@ Here is how you add the filter to a page (it can also be added to a `_quarto.yml
 title: "My Document"
 filters:
    - include-code-files
+   - shadenote
 ---
 
 ````
@@ -81,3 +82,26 @@ def main():
 For now this should support include for ``python``, ``r``, ``julia``, ``html``,
 ``js``, ``ojs``, and ``css``. It might work on other documents too, but will 
 have to guess.
+
+
+### shadenote in pdf and html
+
+The shadenote.lua will automatically detect the shadenote chunk and convert it into a compatiable html shaded note. In order to make it work, you also need to include a `css/shadenote.css` file in your working directory.
+
+```{=latex}
+\begin{shadednote}
+This is a PDF/HTML compatible note.
+\end{shadednote}
+```
+
+```
+.shadednote {
+    background-color: #f0f0f0; /* Light gray */
+    border: 1px solid #888888;
+    border-radius: 6px;
+    padding: 1em;
+    margin: 1em 0;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+```
+
