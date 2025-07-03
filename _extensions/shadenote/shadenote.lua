@@ -6,7 +6,7 @@ local function extract_note_content(raw_latex)
 	return raw_latex:match("\\begin{note}(.-)\\end{note}")
 end
 
-function RawBlock(el)
+function RawBlockNote(el)
 	if FORMAT:match("html") then
 		local content = extract_note_content(el.text)
 		if content then
@@ -24,7 +24,7 @@ local function extract_example_content(raw_latex)
 	return raw_latex:match("\\begin{example}(.-)\\end{example}")
 end
 
-function RawBlock(el)
+function RawBlockExample(el)
 	if FORMAT:match("html") then
 		local content = extract_example_content(el.text)
 		if content then
